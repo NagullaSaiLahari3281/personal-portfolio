@@ -1,0 +1,96 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+body {
+  background: linear-gradient(135deg, #0f172a, #1e293b);
+  color: #e5e7eb;
+  min-height: 100vh;
+}
+
+/* HERO */
+.hero {
+  text-align: center;
+  padding: 50px 20px;
+}
+
+.hero img {
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid #38bdf8;
+  margin-bottom: 15px;
+}
+
+.hero h1 {
+  font-size: 2.3rem;
+}
+
+.hero p {
+  color: #94a3b8;
+  margin-bottom: 20px;
+}
+
+/* NAV */
+nav {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+nav a {
+  color: #38bdf8;
+  text-decoration: none;
+  border: 2px solid #38bdf8;
+  padding: 8px 18px;
+  border-radius: 20px;
+}
+
+nav a:hover {
+  background: #38bdf8;
+  color: #0f172a;
+}
+
+/* CONTENT */
+main {
+  display: flex;
+  justify-content: center;
+}
+
+.content {
+  display: none;
+  max-width: 600px;
+  padding: 30px;
+  text-align: center;
+  
+}
+
+
+.content:target {
+  display: block;
+}
+
+h2 {
+  color: #38bdf8;
+  margin-bottom: 15px;
+}
+
+/* CARDS */
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 15px;
+}
+
+.cards div {
+  background: #020617;
+  padding: 15px;
+  border-radius: 12px;
+  border: 1px solid #38bdf8;
+}
+
