@@ -3,7 +3,7 @@
 This is my personal portfolio website created using **HTML and CSS**.  
 It showcases my basic web development skills, projects, and contact information.
 
-## 🛠️ Technologies Used
+## Technologies Used
 - HTML  
 - CSS  
 
