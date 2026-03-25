@@ -1,17 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
- <head>
+<head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Nagulla Sai Lahari | Web Developer</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
 
 <header class="hero">
-  <img src="lahari.jpeg" >
+  
   <h1>Nagulla Sai Lahari</h1>
-  <p> Web Developer | MERN Stack Learner</p>
+  <p>Web Developer | MERN Stack Learner</p>
 
   <nav>
     <a href="#about">About</a>
@@ -23,14 +24,12 @@
 
 <main>
 
-  <section id="about" class="content">
+  <section id="about" class="content active">
     <h2>About Me</h2>
     <p>
       I am a BTech third-year student aspiring to become a Web Developer.
       I enjoy building clean and responsive websites using HTML, CSS,
-      and JavaScript, and I am currently learning Node.js.<br><br>
-      I am passionate about web development and committed to continuous learning and improvement.
-
+      and JavaScript, and I am currently learning Node.js.
     </p>
   </section>
 
@@ -41,30 +40,81 @@
       <div>CSS</div>
       <div>JavaScript</div>
       <div>Node.js (Basics)</div>
-      
     </div>
   </section>
 
   <section id="projects" class="content">
     <h2>Projects</h2>
+
     <div class="cards">
-      <div>Calculator App</div>
-      <div>Registration Form</div>
-      <div>Portfolio Website</div>
-      <div>Login Form</div>
+
+      <div onclick="toggleDetails('gas')">
+        Gas Leakage Detection & Reduction System
+        <p id="gas" class="details">
+          • Detects gas and automatically turns ON exhaust fan<br>
+          • Works even when no human is present<br>
+          • Includes a monitoring website<br>
+          • <a href="YOUR_LINK_HERE" target="_blank">View Project</a>
+        </p>
+      </div>
+
+      <div onclick="toggleDetails('calc')">
+        Calculator App
+        <p id="calc" class="details">
+          • Performs basic arithmetic operations<br>
+          • Built using HTML, CSS & JavaScript
+        </p>
+      </div>
+
+      <div onclick="toggleDetails('reg')">
+        Registration Form
+        <p id="reg" class="details">
+          • Form validation using JavaScript<br>
+          • Clean and responsive UI
+        </p>
+      </div>
+
+      <div onclick="toggleDetails('login')">
+        Login Form
+        <p id="login" class="details">
+          • Username & password validation<br>
+          • Simple frontend authentication
+        </p>
+      </div>
+
     </div>
   </section>
 
   <section id="contact" class="content">
     <h2>Contact</h2>
-    <p>Email: laharinagulla@gmail.com</p>
-    <p>Github: github.com/NagullaSaiLahari3281</p>
-    <p>Linkedin: https://www.linkedin.com/in/nagulla-sai-lahari</p>
-    </section>
-    </main>
-    </body>
-    </html>
+    <p>Email: <a href="mailto:laharinagulla@gmail.com">laharinagulla@gmail.com</a></p>
+    <p>Github: <a href="https://github.com/NagullaSaiLahari3281" target="_blank">View Profile</a></p>
+    <p>LinkedIn: <a href="https://www.linkedin.com/in/nagulla-sai-lahari" target="_blank">View Profile</a></p>
+  </section>
 
+</main>
 
+<footer>
+  <p>© 2026 Nagulla Sai Lahari | All Rights Reserved</p>
+</footer>
 
+<script>
+  const links = document.querySelectorAll("nav a");
+  const sections = document.querySelectorAll(".content");
 
+  links.forEach(link => {
+    link.addEventListener("click", () => {
+      sections.forEach(sec => sec.classList.remove("active"));
+      document.querySelector(link.getAttribute("href")).classList.add("active");
+    });
+  });
+
+  function toggleDetails(id) {
+    const element = document.getElementById(id);
+    element.style.display =
+      element.style.display === "block" ? "none" : "block";
+  }
+</script>
+
+</body>
+</html>
