@@ -1,16 +1,147 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Nagulla Sai Lahari | Web Developer</title>
-  <link rel="stylesheet" href="styles.css">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    body {
+      background: linear-gradient(135deg, #020617, #0f172a, #1e293b);
+      color: #e5e7eb;
+    }
+
+    .hero {
+      text-align: center;
+      padding: 50px 20px;
+    }
+
+    .hero img {
+      width: 140px;
+      height: 140px;
+      border-radius: 50%;
+      border: 4px solid #60a5fa;
+      margin-bottom: 15px;
+    }
+
+    .hero h1 {
+      font-size: 2.5rem;
+      text-shadow: 0 0 10px #60a5fa;
+    }
+
+    .hero p {
+      color: #94a3b8;
+      margin-bottom: 20px;
+    }
+
+    nav {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    nav a {
+      color: #60a5fa;
+      text-decoration: none;
+      border: 2px solid #60a5fa;
+      padding: 8px 18px;
+      border-radius: 20px;
+      transition: 0.3s;
+    }
+
+    nav a:hover {
+      background: #60a5fa;
+      color: #0f172a;
+    }
+
+    main {
+      display: flex;
+      justify-content: center;
+      padding: 20px;
+    }
+
+    .content {
+      display: none;
+      max-width: 600px;
+      padding: 30px;
+      text-align: center;
+      animation: fade 0.5s ease-in-out;
+    }
+
+    .content.active {
+      display: block;
+    }
+
+    h2 {
+      color: #60a5fa;
+      margin-bottom: 15px;
+      text-shadow: 0 0 8px #60a5fa;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+      gap: 15px;
+      margin-top: 15px;
+    }
+
+    .cards div {
+      background: #020617;
+      padding: 15px;
+      border-radius: 12px;
+      border: 1px solid #60a5fa;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .cards div:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 20px #60a5fa, 0 0 10px #a78bfa;
+    }
+
+    .details {
+      display: none;
+      margin-top: 10px;
+      font-size: 0.9rem;
+      color: #94a3b8;
+    }
+
+    #contact a {
+      color: #22c55e;
+      text-decoration: none;
+    }
+
+    #contact a:hover {
+      text-decoration: underline;
+    }
+
+    footer {
+      text-align: center;
+      padding: 15px;
+      margin-top: 20px;
+      color: #94a3b8;
+    }
+
+    @keyframes fade {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+
 </head>
 
 <body>
 
 <header class="hero">
-  
+  <img src="lahari.jpeg" alt="Lahari Photo">
   <h1>Nagulla Sai Lahari</h1>
   <p>Web Developer | MERN Stack Learner</p>
 
@@ -51,17 +182,17 @@
       <div onclick="toggleDetails('gas')">
         Gas Leakage Detection & Reduction System
         <p id="gas" class="details">
-          • Detects gas and automatically turns ON exhaust fan<br>
+          • Detects gas and activates exhaust fan automatically<br>
           • Works even when no human is present<br>
-          • Includes a monitoring website<br>
-          • <a href="YOUR_LINK_HERE" target="_blank">View Project</a>
+          • Includes monitoring website<br>
+          • <a href="#" target="_blank">View Project</a>
         </p>
       </div>
 
       <div onclick="toggleDetails('calc')">
         Calculator App
         <p id="calc" class="details">
-          • Performs basic arithmetic operations<br>
+          • Performs arithmetic operations<br>
           • Built using HTML, CSS & JavaScript
         </p>
       </div>
@@ -70,7 +201,7 @@
         Registration Form
         <p id="reg" class="details">
           • Form validation using JavaScript<br>
-          • Clean and responsive UI
+          • Clean UI design
         </p>
       </div>
 
@@ -110,9 +241,8 @@
   });
 
   function toggleDetails(id) {
-    const element = document.getElementById(id);
-    element.style.display =
-      element.style.display === "block" ? "none" : "block";
+    const el = document.getElementById(id);
+    el.style.display = el.style.display === "block" ? "none" : "block";
   }
 </script>
 
