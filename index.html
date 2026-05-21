@@ -140,20 +140,63 @@ footer {
   margin-top: 20px;
   color: #94a3b8;
 }
-    #contact {
-  color: #e5e7eb; 
+   /* CONTACT SECTION */
+
+#contact{
+    padding:80px 10%;
 }
 
-#contact a {
-  color: #00ff88; 
-  text-decoration: none;
-  font-weight: 500;
+.contact-box{
+    display:flex;
+    gap:20px;
+    margin-bottom:30px;
+    flex-wrap:wrap;
 }
 
-#contact a:hover {
-  text-shadow: 0 0 8px #00ff88;
+.social-btn{
+    padding:15px 25px;
+    border:2px solid #00d9ff;
+    border-radius:15px;
+    color:#00d9ff;
+    text-decoration:none;
+    transition:0.3s;
 }
 
+.social-btn:hover{
+    background:#00d9ff;
+    color:#081229;
+}
+
+.contact-form{
+    display:flex;
+    flex-direction:column;
+    gap:15px;
+}
+
+.contact-form label{
+    color:#00d9ff;
+    font-size:20px;
+}
+
+.contact-form input,
+.contact-form textarea{
+    background:#06142d;
+    border:2px solid #00d9ff;
+    padding:18px;
+    border-radius:15px;
+    color:white;
+    font-size:16px;
+    outline:none;
+}
+
+.contact-form textarea{
+    min-height:180px;
+    resize:vertical;
+}
+
+.contact-form button{
+    margin-top:10px;
+}
 @keyframes fade {
   from { opacity: 0; transform: translateY(10px); }
   to { opacity: 1; transform: translateY(0); }
@@ -396,6 +439,20 @@ footer {
     <p>Email: <a href="mailto:laharinagulla@gmail.com">laharinagulla@gmail.com</a></p>
     <p>Github: <a href="https://github.com/NagullaSaiLahari3281" target="_blank">View Profile</a></p>
     <p>LinkedIn: <a href="https://www.linkedin.com/in/nagulla-sai-lahari" target="_blank">View Profile</a></p>
+    <form class="contact-form">
+
+    <label>Your Email</label>
+    <input type="email" placeholder="you@example.com">
+
+    <label>Subject</label>
+    <input type="text" placeholder="What's this about?">
+
+    <label>Message</label>
+    <textarea placeholder="Your message here..."></textarea>
+
+    <button type="submit">Send Message</button>
+
+  </form>
   </section>
 
 </main>
@@ -405,20 +462,11 @@ footer {
 </footer>
 
 <script>
-  const links = document.querySelectorAll("nav a");
-  const sections = document.querySelectorAll(".content");
-
-  links.forEach(link => {
-    link.addEventListener("click", () => {
-      sections.forEach(sec => sec.classList.remove("active"));
-      document.querySelector(link.getAttribute("href")).classList.add("active");
-    });
-  });
-
-  function toggleDetails(id) {
-    const el = document.getElementById(id);
-    el.style.display = el.style.display === "block" ? "none" : "block";
-  }
+function toggleDetails(id) {
+  const el = document.getElementById(id);
+  el.style.display =
+    el.style.display === "block" ? "none" : "block";
+}
 </script>
 
 </body>
